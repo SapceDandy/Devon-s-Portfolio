@@ -43,7 +43,7 @@ const Header = () => {
                             <h1 className = "head-text">
                                 <motion.div 
                                     whileInView = {{rotateZ: ["0deg", "-40deg", "50deg", "-20deg", "0deg"], overflow: "visible"}}
-                                    transition = {{ delay: 2.8, duration: .5, ease:"easeOut"}}
+                                    transition = {{ delay: 2.3, duration: .5, ease:"easeOut"}}
                                     className = "app__header-info"
                                 >
                                     <div className="wave">👋</div>
@@ -63,7 +63,7 @@ const Header = () => {
                                 <Typewriter
                                     loop = {1}
                                     typeSpeed = {30}
-                                    words = {["I am a 2020 to omomomomoooomommoomommo transition into a software development role"]}
+                                    words = {["I am a 2020 graduate from Morehouse College transitioning into a software development role"]}
                                 />
                             </p>
                         </motion.div>
@@ -100,10 +100,10 @@ const Header = () => {
                 }}
                 style = {{zIndex: 100}}
             >
-                <Tilt className = "tilt" options = {{ max: 50, perspective: 300, glare: false, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"}}
+                {/*<Tilt className = "tilt" options = {{ max: 50, perspective: 300, glare: false, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"}}
                 >
                     <h1>Hello World!</h1>
-                </Tilt>
+                </Tilt>*/}
             </motion.div>
 
                 <motion.div

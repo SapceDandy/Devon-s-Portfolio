@@ -4,11 +4,10 @@ const NavigationDots = ({active}) => {
     return (
         <div className="app__navigation app__left-middle" style = {{zIndex: 5, position: "fixed", right: "0"}}>
             {['home', 'about', 'work', 'skills', 'testimonials', 'contact'].map((item, index) => (
-                <a 
-                    href = {`#${item}`}
+                <div 
                     key = {item + index}
                     className = "app__navigation-dot"
-                    style = {active === item ? {backgroundColor: '#313BAC'} : { }}
+                    style = {active === item ? {backgroundColor: 'black'} : { }}
                 />
             ))}
         </div>

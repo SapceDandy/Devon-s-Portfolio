@@ -24,7 +24,7 @@
         margin: .5rem;
 
         &:hover {
-            background-color: var(--secondary-color);
+            background-color: #000;
             color: #fff;
         }
 
@@ -35,8 +35,10 @@
     }
 
     .item-active {
-        background-color: var(--secondary-color);
+        background-color: #000;
         color: #fff;
+        pointer-events: none;
+        cursor: none;
     }
 }
 
@@ -93,8 +95,8 @@
 
 .app__work-hover {
     position: absolute;
-    width: 34.2vh;
-    height: 33vh;
+    width: 238px;
+    height: 230px;
     border-radius: .5rem;
     background-color: rgba(0, 0, 0, .5);
     opacity: 0;

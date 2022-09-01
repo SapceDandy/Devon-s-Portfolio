@@ -35,7 +35,8 @@ const Navbar = () => {
                 >
                     <div className = "app__navbar">
                         <div className = "app__navbar-logo">
-                            <img src = {images.logo} alt = "logo"/>
+                            Devon Dudley
+                            {/*<img src = {images.logo} alt = "logo"/>*/}
                         </div>
                         <ul className = "app__navbar-links">
                             {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
@@ -45,29 +46,33 @@ const Navbar = () => {
                                 </li>
                             ))}
                         </ul>
-                        
-                        <div className = "app__navbar-menu">
-                            <HiMenuAlt4 onClick = {() => setToggle(true)}/>
-                            
-                            {toggle && (
-                                    <motion.div 
-                                        initial = {{x : 400}}
-                                        whileInView = {{ x: 0}}
-                                        transition = {{ duration: .85, ease: "easeOut"}}
-                                    >
-                                    <HiX onClick = {() => setToggle(false)}/>
-                                    <ul>
-                                        {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
-                                        <li key = {`${item}`}>
-                                            <a href = {`#${item}`} onClick = {() => setToggle(false)}>{item}</a> 
-                                        </li>
-                                        ))}
-                                    </ul>
-                                </motion.div>  
-                            )}
-                        </div>
                     </div>
                 </motion.div>
+                <motion.div
+                    className = "app__navbar-menu"
+                    animate = {{y: shouldShowActions ? 0 : -85}}
+                    transition = {{duration: .5 , ease: "easeInOut"}}
+                >
+                    <HiMenuAlt4 onClick = {() => setToggle(true)}/>
+                </motion.div>
+                    <div className = "app__navbar-menu-info">
+                    {toggle && (
+                            <motion.div 
+                                initial = {{x : 400}}
+                                whileInView = {{ x: 0}}
+                                transition = {{ duration: .85, ease: "easeOut"}}
+                            >
+                            <HiX onClick = {() => setToggle(false)}/>
+                            <ul>
+                                {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
+                                <li key = {`${item}`}>
+                                    <a href = {`#${item}`} onClick = {() => setToggle(false)}>{item}</a> 
+                                </li>
+                                ))}
+                            </ul>
+                        </motion.div>  
+                    )}
+                </div>
         </nav>
     )
 };

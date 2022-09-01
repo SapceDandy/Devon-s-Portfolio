@@ -4,10 +4,10 @@
   --font-base: "DM Sans", sans-serif;
 
   --primary-color: #F5EE9E;
-  --secondary-color: #2D728F;
+  --secondary-color: #ffffff;
   --black-color: #030303;
   --lightGray-color: lightgrey;
-  --gray-color: #3B8EA5;
+  --gray-color: #ffffff;
   --brown-color: #AB3428;
   --white-color: #ffffff;
 }
@@ -16,5 +16,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /*scroll-behavior: smooth;*/
+  scroll-behavior: smooth;
 }
+
