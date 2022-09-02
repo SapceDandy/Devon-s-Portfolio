@@ -23,6 +23,19 @@ function Tilt(props) {
 
 const Header = () => {
     const constraintsRef = useRef(null);
+    const [headerHeight, setHeaderHeight] = useState(0);
+    const [headerWidth, setHeaderWidth] = useState(0);
+    const [circleHeight, setCircleHeight] = useState(0);
+    const circleRef = useRef(null);
+    /*const yRef = useRef(.5);
+    const xRef = useRef(.5);*/
+
+    useEffect(() => {
+        setHeaderHeight(constraintsRef.current.clientHeight);
+        setHeaderWidth(constraintsRef.current.clientWidth);
+        setCircleHeight(circleRef.current.clientHeight);
+    })
+    
 
     return (
         <div className = "app__header app__flex" ref = {constraintsRef}>
@@ -48,7 +61,7 @@ const Header = () => {
                                 >
                                     <div className="wave">👋</div>
                                 </motion.div> 
-                                Devon Dudley
+                                Devon
                             </h1>
                         </motion.div>
                     </div>
@@ -80,13 +93,13 @@ const Header = () => {
             >
                 <img src = {images.profile} alt="Devon" />
 
-                <motion.img
+                {/*<motion.img
                     whileInView = {{ scale: [0, 1] }}
                     transition = {{ duration: 1, ease: "easeInOut"}}
                     src = {images.circle}
                     alt = "circle"
                     className = "overlay_circle"
-                />
+                />*/}
 
             </motion.div>
 
@@ -105,13 +118,14 @@ const Header = () => {
                     <h1>Hello World!</h1>
                 </Tilt>*/}
             </motion.div>
-
                 <motion.div
+                    /*animate = {{x: -headerWidth, y: 1}}*/
                     style = {{ position: "relative", zIndex: "4" }}
+                    transition = {{duration: 3, ease:"easeInOut"}}
                     className = "app__header-circles"
                 >
                     {[images.flutter, images.redux, images.sass].map((circle, index) => (
-                    <motion.div
+                    <motion.div  
                         drag
                         dragConstraints = {constraintsRef}
                         dragTransition={{
@@ -124,10 +138,11 @@ const Header = () => {
                         transition = {{duration: 2, ease: "easeInOut", type: "just", stiffness: 1}}
                         onUpdate = {endlessMove}*/
                     >
+                        
                         <Tilt className = "tilt" options = {{ max: 50, perspective: 300, glare: true, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"}}
                         >
                             <div className = "circle-cmp app__flex" key = {`circle-${index}`}>
-                                <img src = {circle} alt = "circle" />
+                                <img ref = {circleRef} src = {circle} alt = "circle" />
                             </div>
                         </Tilt>
                     </ motion.div>

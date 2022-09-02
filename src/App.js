@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { About, Footer, Header, Skills, Contact, Work } from "./container";
+import { About, Footer, Header, Skills, Contact, Work, Matter } from "./container";
 import { Navbar, NavigationDots } from "./components";
 
 import "./App.scss";
@@ -8,8 +8,6 @@ import "./App.scss";
 const App = () => {
   let [active, setActive] = useState("about");
   /*window.visualViewport.offsetTop*/
-
-  console.log("Hello")
   useEffect(() => {
   //console.log("react Dom: ", window.visualViewport)
   const pageSection = document.getElementsByClassName("app__container");
@@ -33,6 +31,7 @@ const App = () => {
     <div className="app">
       <NavigationDots active = {active} />
       <Navbar />
+      {/*<Matter />*/}
       <Header />
       <About />
       <Work />

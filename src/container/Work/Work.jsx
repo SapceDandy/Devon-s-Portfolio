@@ -42,11 +42,8 @@ const Work = () => {
     return (
         <>
             <h2 className = "head-text">
-                I know that 
-                <span> Good Design</span>
-                <br />
-                means
-                <span> Good Business</span>
+                Everything I learned
+                <span> In 6 Months</span>
             </h2>
 
             <div className = "app__work-filter">
@@ -75,7 +72,8 @@ const Work = () => {
                                 transition = {{ duration: .25, ease: 'easeInOut', staggerChildren: .5}}
                                 className = "app__work-hover app__flex"
                             >
-                                <a href={work.projectLink} target="_blank" rel="noreferrer">
+                                {console.log("P Link: ", !work?.projectLink)}
+                                {!(!work?.projectLink) && (<a href={work?.projectLink} target="_blank" rel="noreferrer">
                                     <motion.div
                                         whileInView = {{ scale: [0, 1]}}
                                         whileHover = {{ scale: [1, .9]}}
@@ -84,8 +82,8 @@ const Work = () => {
                                     >
                                         <AiFillEye />
                                     </motion.div>
-                                </a>
-                                <a href={work.codeLink} target="_blank" rel="noreferrer">
+                                </a>)}
+                                {(!(!work.codeLink)) && (<a href={work.codeLink} target="_blank" rel="noreferrer">
                                     <motion.div
                                         whileInView = {{ scale: [0, 1]}}
                                         whileHover = {{ scale: [1, .9]}}
@@ -94,7 +92,7 @@ const Work = () => {
                                     >
                                         <AiFillGithub />
                                     </motion.div>
-                                </a>
+                                </a>)}
                             </motion.div>
                         </div>   
 

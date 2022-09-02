@@ -17,7 +17,7 @@ const Skills = () => {
 
         client.fetch(query)
             .then((data) => {
-                setExperience(data);
+                setExperience(data.sort((a, b) => parseInt(b.year) - parseInt(a.year)));
             })
             client.fetch(skillsQuery)
             .then((data) => {
