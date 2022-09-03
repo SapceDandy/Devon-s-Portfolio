@@ -5,12 +5,12 @@ import { motion } from 'framer-motion'
 const AppWrap = (Component, idName, classNames) => function HOC(){
 
     return (
-        <div id = {idName} className = {`app__container ${(classNames !== "paralaxBackground") ? classNames : null}`}>
+        <div id = {idName} className = {`app__container ${classNames}`}>
             <SocialMedia />
             <div className = "app__wrapper app__flex">
                 <Component />   
             </div>
-            {(classNames === "paralaxBackground") && (<div className = {classNames}></div>)}
+            {/*(classNames === "paralaxBackground") && (<div className = {classNames}></div>)*/}
         </div>
     )
 }

@@ -1,8 +1,7 @@
 .app {
-    width: 100%;
-    background-image: linear-gradient(rgba(245, 238, 158, 1)
-    ,rgba(45, 114, 143, 1));
-    font-family: var(--font-base);
+  background-image: linear-gradient(rgba(245, 238, 158, 1)
+  ,rgba(45, 114, 143, 1));
+  font-family: var(--font-base);
 }
 
 .app__whitebg {
@@ -15,7 +14,6 @@
 
 .app__container {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: row;
 }
@@ -227,7 +225,7 @@
   .backGroundSquare {
     display: flex;
     background-color: rgba(255, 255, 255, 0.40);
-    /*background-image: url("./logo.svg");*/
+    //background-image: url(./logo.png);
     filter: blur(13px);
     border-radius: 10px;
     width: 5vw;
@@ -242,7 +240,4 @@
 
 .headerHeight {
   display: flex;
-  padding-top: 8rem;
-  height: 100vh;
-  width: 100vw;
 }

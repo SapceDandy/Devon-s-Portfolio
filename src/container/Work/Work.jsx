@@ -111,4 +111,4 @@ const Work = () => {
     )
 }
 
-export default AppWrap(Work, 'work', "paralaxBackground")
+export default AppWrap(Work, 'work')
