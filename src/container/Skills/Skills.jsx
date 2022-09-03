@@ -28,7 +28,7 @@ const Skills = () => {
     return (
         <>
             <h2 className = "head-text">
-               Skills & Experience 
+               Skills <span style = {{color: "white"}}>&</span> Experience 
             </h2>
 
             <div className = "app__skills-container">
@@ -68,6 +68,7 @@ const Skills = () => {
                                 {experience?.works?.map((work) => (
                                     <>
                                         <motion.div
+                                            style = {{marginBottom: "1rem"}}
                                             whileInView = {{ opacity: [0, 1]}}
                                             transition = {{ duration: .5 }}
                                             className = "app__skills-exp-work"

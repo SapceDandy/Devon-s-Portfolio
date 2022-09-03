@@ -36,7 +36,6 @@ const Header = () => {
         setCircleHeight(circleRef.current.clientHeight);
     })
     
-
     return (
         <div className = "app__header app__flex" ref = {constraintsRef}>
             <motion.div 
@@ -66,7 +65,7 @@ const Header = () => {
                         </motion.div>
                     </div>
 
-                    <div>
+                    {(headerWidth > 350) && (<div>
                         <motion.div 
                             whileInView = {{x : [-400, 0], opacity: [0, 1], overflow: "visible" }}
                             transition = {{duration: 1, ease:"easeInOut"}}
@@ -80,7 +79,7 @@ const Header = () => {
                                 />
                             </p>
                         </motion.div>
-                    </div>
+                    </div>)}
                 </div>
             </div>
             </motion.div>
@@ -119,13 +118,12 @@ const Header = () => {
                 </Tilt>*/}
             </motion.div>
                 <motion.div
-                    /*animate = {{x: -headerWidth, y: 1}}*/
                     style = {{ position: "relative", zIndex: "4" }}
                     transition = {{duration: 3, ease:"easeInOut"}}
                     className = "app__header-circles"
                 >
                     {[images.flutter, images.redux, images.sass].map((circle, index) => (
-                    <motion.div  
+                    <motion.div 
                         drag
                         dragConstraints = {constraintsRef}
                         dragTransition={{
@@ -152,4 +150,4 @@ const Header = () => {
     )
 }
 
-export default AppWrap(Header, "home")
+export default AppWrap(Header, "home", "headerHeight")

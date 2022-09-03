@@ -1,3 +1,18 @@
+.about__page {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0rem 4rem 0rem 4rem;
+    overflow: hidden;
+
+    @media screen and (max-width: 900px){
+        width: 100vw;
+        padding: 0rem 1.5rem 0rem 1.5rem;
+        flex-direction: column;
+    }
+}
+
 .head-text {
     margin-top: 2rem;
 }
@@ -10,22 +25,35 @@
 
 .app__profiles {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: flex-start;
-    flex-wrap: wrap;
+    overflow: hidden;
     margin-top: 2rem;
+
+    @media screen and (max-width: 900px) {
+        padding-left: 1rem;
+    }
+}
+
+.app__profiles-wrapper {
+    display: flex;
+    width: 65%;
+    /*background: blue;*/
+    @media screen and (max-width: 900px) {
+        width: 100%;
+    }
 }
 
 .app__profile-item {
-    width: 190px;
     display: flex;
+    width: fit-content;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
     margin: 2rem;
 
     img {
-        width: 100%;
+        width: 180px;
         height: 170px;
         border-radius: 15px;
         object-fit: cover;
@@ -39,4 +67,87 @@
             height: 320px;
         }
     }
+}
+
+.moveButton {
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 2rem 2rem;
+    margin: 0rem 4rem 0rem 4rem;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, .6);
+    color: white;
+    border: none;
+    pointer-events: all;
+    cursor: pointer;
+    user-select:none;
+
+    @media screen and (max-width: 900px){
+        display: none;
+    }
+}
+
+.moveButton:disabled {
+    color: rgba(8, 8, 8, 0.4);
+    background-color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+}
+
+.phoneButtonWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.moveButtonPhoneLeft {
+    display: none;
+    padding: .5rem 1.5rem;
+    margin-top: 2rem;
+    border-radius: 10px 0px 0px 10px;
+    background: rgba(0, 0, 0, .6);
+    color: white;
+    border: none;
+    pointer-events: all;
+    cursor: pointer;
+    user-select:none;
+
+    @media screen and (max-width: 900px){
+        display: flex;
+    }
+}
+
+.moveButtonPhoneLeft:disabled {
+    color: rgba(8, 8, 8, 0.4);
+    background-color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+}
+
+.moveButtonPhoneRight {
+    display: none;
+    padding: .5rem 1.5rem;
+    margin-top: 2rem;
+    border-radius: 0px 10px 10px 0px;
+    background: rgba(0, 0, 0, .6);
+    color: white;
+    border: none;
+    pointer-events: all;
+    cursor: pointer;
+    user-select:none;
+
+    @media screen and (max-width: 900px){
+        display: flex;
+    }
+}
+
+.moveButtonPhoneRight:disabled {
+    color: rgba(8, 8, 8, 0.4);
+    background-color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
 }

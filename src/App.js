@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { About, Footer, Header, Skills, Contact, Work, Matter } from "./container";
-import { Navbar, NavigationDots } from "./components";
+import { Navbar, NavigationDots, BackgroundEffect } from "./components";
 
 import "./App.scss";
 
@@ -31,6 +31,7 @@ const App = () => {
     <div className="app">
       <NavigationDots active = {active} />
       <Navbar />
+      <BackgroundEffect />
       {/*<Matter />*/}
       <Header />
       <About />

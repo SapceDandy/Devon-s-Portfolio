@@ -1,4 +1,5 @@
 .app {
+    width: 100%;
     background-image: linear-gradient(rgba(245, 238, 158, 1)
     ,rgba(45, 114, 143, 1));
     font-family: var(--font-base);
@@ -31,7 +32,7 @@
   flex-direction: column;
   z-index: 2;
   @media screen and (max-width: 450px) {
-    padding: 4rem 1rem 2rem;
+    padding: 0rem .5rem;
   }
 }
 
@@ -108,7 +109,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba( 0,0,0, .2);
+    background-color: rgba( 0,0,0, .1);
     margin: 0.25rem 0;
     /*border: 1px solid var(--lightGray-color);*/
 
@@ -126,6 +127,7 @@
 
     &:hover {
       background-color: rgba(255, 255, 255, 1);
+      transition: all 0.3s ease-in-out;
       /*border-color: var(--secondary-color);*/
 
       svg {
@@ -197,17 +199,50 @@
 
 .paralaxBackground {
   display: flex;
-  position: absolute;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  position: absolute;
   background-image: url("flowerBackgroundImage.jpg");
   background-size: cover;
   background-attachment: fixed;
   opacity: 20%;
   filter: grayscale(100%);
-  z-index: -1;
+  z-index: 1;
 
   @media screen and (max-width: 1200px) {
-    background-image: none;
+    display: none;
   }
+}
+
+.app__background-effect {
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+
+  .backGroundSquare {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.40);
+    /*background-image: url("./logo.svg");*/
+    filter: blur(13px);
+    border-radius: 10px;
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .small {
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+}
+
+.headerHeight {
+  display: flex;
+  padding-top: 8rem;
+  height: 100vh;
+  width: 100vw;
 }

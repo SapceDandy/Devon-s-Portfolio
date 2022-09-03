@@ -1,0 +1,99 @@
+.formMargin {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 2rem;
+    row-gap: 4rem;
+
+    @media screen and (max-width: 900px) {
+        margin: 0rem;
+    }
+}
+
+.websiteForm {
+    display: flex;
+    width: 50vw;
+    flex-direction: column;
+    row-gap: 2rem;
+
+    input {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+        padding: 1rem 1rem;
+        border-radius: 20px;
+        outline: none;
+        border: none;
+    }
+
+    input::placeholder {
+        color: rgba(0, 0, 0, 0.35);
+    }
+
+    textarea{
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+        height: 200px;
+        width: 100%;
+        padding: 1rem 2rem;
+        border-radius: 20px;
+        outline: none;
+        border: none;
+        resize: none;
+        scroll-behavior: smooth;
+    }
+
+    textarea::-webkit-scrollbar {
+        display: none;
+    }
+
+    button {
+        width: 100%;
+        padding: .5rem 1.5rem;
+        border-radius: 20px;
+        background: rgba(0, 0, 0, .6);
+        color: white;
+        border: none;
+        pointer-events: all;
+        cursor: pointer;
+    }
+    
+    button:disabled {
+        color: rgba(8, 8, 8, 0.4);
+        background-color: rgba(255, 255, 255, 0.3);
+        pointer-events: none;
+    }
+
+    @media screen and (max-width: 900px) {
+        width: 80vw;
+    }
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+}
+
+.firstAndLast {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+
+.inputArea {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+
+.front {
+    display: flex;
+    width: 100%;
+    justify-content: start;
+}
+
+.back {
+    display: flex;
+    width: 100%;
+    justify-content: end; 
+}
