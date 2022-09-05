@@ -1,6 +1,7 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, useRef} from "react";
 import  {  motion } from "framer-motion";
 import ReactTooltip from "react-tooltip";
+import VanillaTilt from "vanilla-tilt";
 
 import { AppWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
@@ -25,6 +26,17 @@ const Skills = () => {
             })
     }, [])
 
+    function Tilt(props) {
+        const { options, ...rest } = props;
+        const tilt = useRef(null);
+      
+        useEffect(() => {
+          VanillaTilt.init(tilt.current, options);
+        }, [options]);
+      
+        return <div ref={tilt} {...rest} />;
+    }
+
     return (
         <>
             <h2 className = "head-text">
@@ -34,17 +46,14 @@ const Skills = () => {
             <div className = "app__skills-container">
                 <motion.div className = "app__skills-list">
                     {skills?.map((skill) => (
-                        <motion.div
-                            //whileInView = {{ opacity: [0, 1] }}
-                            //transition = {{ duration: .5 }}
-                            className = "app__skills-item app__flex"
-                            //key = {skill.name}
-                        >
-                            <div className = "app__flex" style = {{ backgroundColor: skill.bgColor }}>
-                                <img src = {urlFor(skill.icon)} alt = {skill.name}/>                               
-                            </div>
+                        <div className = "app__skills-item app__flex">
+                            <Tilt className = "tilt" options = {{ max: 80, perspective: 100, glare: true, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"}}>
+                                <div className = "app__flex">
+                                    <img src = {urlFor(skill.icon)} alt = {skill.name}/>                               
+                                </div>
+                            </Tilt>
                             <p className = "p-text">{skill.name}</p>
-                        </motion.div>
+                        </div>
                     ))}
                 </motion.div>
 
