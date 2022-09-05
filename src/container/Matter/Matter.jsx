@@ -9,7 +9,7 @@ const Matter = () => {
   
     useEffect(() => {
       const cw = 1000
-      const ch = 500
+      const ch = 150
   
       const render = Render.create({
         element: scene.current,
@@ -23,10 +23,10 @@ const Matter = () => {
       })
   
       World.add(engine.current.world, [
-        Bodies.rectangle(cw / 2, -10, cw, 20, { isStatic: true }),
-        Bodies.rectangle(-10, ch / 2, 20, ch, { isStatic: true }),
-        Bodies.rectangle(cw / 2, ch + 10, cw, 20, { isStatic: true }),
-        Bodies.rectangle(cw + 10, ch / 2, 20, ch, { isStatic: true })
+        Bodies.rectangle(cw / 2, -15, cw, 20, { isStatic: true }),
+        Bodies.rectangle(-15, ch / 2, 20, ch, { isStatic: true }),
+        Bodies.rectangle(cw / 2, ch + 15, cw, 20, { isStatic: true }),
+        Bodies.rectangle(cw + 15, ch / 2, 20, ch, { isStatic: true })
       ])
   
       Engine.run(engine.current)
@@ -53,11 +53,10 @@ const Matter = () => {
   
     const handleAddCircle = e => {
       if (isPressed.current) {
-        const ball = Bodies.rectangle(
+        const ball = Bodies.circle(
           50,
           50,
-          50,
-          50,
+          10,
           {
             mass: 10,
             restitution: .01,

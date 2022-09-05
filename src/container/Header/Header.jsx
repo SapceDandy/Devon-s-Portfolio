@@ -114,8 +114,8 @@ const Header = () => {
             <div className = "app__header-img">
                 <motion.div
                     initial = {{ x: 0}}
-                    whileInView = {{ y: [40,-60] }}
-                    transition = {{ duration: .65, ease:"easeOut", yoyo: Infinity}}
+                    whileInView = {{ y: [30,-50] }}
+                    transition = {{ duration: .8, ease:"easeOut", yoyo: Infinity}}
                 >
                     <img src = {images.profile} alt="Devon" />
                 </motion.div>

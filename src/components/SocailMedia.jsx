@@ -1,19 +1,25 @@
-import React from 'react';
-import { BsTwitter, BsInstagram} from 'react-icons/bs';
-import { FaFacebookF } from 'react-icons/fa'
+import { ImGithub } from 'react-icons/im';
+import { BsLinkedin } from 'react-icons/bs';
+import { BiBarChartAlt } from "react-icons/bi";
 
 const SocailMedia = () => {
     return (
-        <div className = "app__social" style = {{zIndex: 5, position: "fixed", bottom: "0", left: "0"}}>
-            <div>
-                <BsTwitter />
-            </div>
-            <div>
-                <BsInstagram />
-            </div>
-            <div>
-                <FaFacebookF />
-            </div>
+        <div className = "app__social">
+            <a href = "https://github.com/SapceDandy" target = "_blank" rel = "noreferrer">
+                <div>
+                    <ImGithub />
+                </div>
+            </a>
+            <a href = "https://www.linkedin.com/in/devon-dudley-208975124/" target = "_blank" rel = "noreferrer">
+                <div>
+                    <BsLinkedin />
+                </div>
+            </a>
+            <a href = "https://devonportfolioproject.vercel.app/" target = "_blank" rel = "noreferrer">
+                <div>
+                    <BiBarChartAlt />
+                </div>
+            </a>
         </div>
     )
 }

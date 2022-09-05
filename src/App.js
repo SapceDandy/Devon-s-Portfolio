@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-
+import { useEffect, useState, useRef } from "react";
 import { About, Footer, Header, Skills, Contact, Work, Matter } from "./container";
-import { Navbar, NavigationDots, BackgroundEffect } from "./components";
+import { Navbar, NavigationDots, BackgroundEffect, SocialMedia } from "./components";
 
 import "./App.scss";
 
@@ -39,6 +38,7 @@ const App = () => {
       <Skills />
       <Contact />
       <Footer />
+      <SocialMedia />
     </div>
   );
 }

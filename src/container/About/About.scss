@@ -85,13 +85,20 @@
     pointer-events: all;
     cursor: pointer;
     user-select:none;
+    transition: all .25s ease-in-out;
 
     @media screen and (max-width: 900px){
         display: none;
     }
 }
 
+.moveButton:hover {
+    transition: all .25s ease-in-out;
+    scale: 125%;
+}
+
 .moveButton:disabled {
+    transition: all .25s ease-in-out;
     color: rgba(8, 8, 8, 0.4);
     background-color: rgba(255, 255, 255, 0.3);
     pointer-events: none;
@@ -117,13 +124,20 @@
     pointer-events: all;
     cursor: pointer;
     user-select:none;
+    transition: all .3s ease-in-out;
 
     @media screen and (max-width: 900px){
         display: flex;
     }
 }
 
+/*.moveButtonPhoneLeft:hover {
+    transition: all .3s ease-in-out;
+    background: rgba(0, 0, 0, .3);
+}*/
+
 .moveButtonPhoneLeft:disabled {
+    transition: all .3s ease-in-out;
     color: rgba(8, 8, 8, 0.4);
     background-color: rgba(255, 255, 255, 0.3);
     pointer-events: none;
@@ -140,13 +154,20 @@
     pointer-events: all;
     cursor: pointer;
     user-select:none;
+    transition: all .3s ease-in-out;
 
     @media screen and (max-width: 900px){
         display: flex;
     }
 }
 
+/*.moveButtonPhoneRight:hover {
+    transition: all .3s ease-in-out;
+    background: rgba(0, 0, 0, .3);
+}*/
+
 .moveButtonPhoneRight:disabled {
+    transition: all .3s ease-in-out;
     color: rgba(8, 8, 8, 0.4);
     background-color: rgba(255, 255, 255, 0.3);
     pointer-events: none;
