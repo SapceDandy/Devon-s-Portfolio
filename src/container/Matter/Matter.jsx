@@ -1,4 +1,4 @@
-import { useRef, useEffect} from "react";
+import { useRef, useEffect, useState} from "react";
 import { AppWrap } from "../../wrapper";
 import { Engine, Render, Bodies, World } from 'matter-js';
 
@@ -6,10 +6,10 @@ const Matter = () => {
     const scene = useRef()
     const isPressed = useRef(false)
     const engine = useRef(Engine.create())
-  
+
     useEffect(() => {
-      const cw = 1000
-      const ch = 150
+      const cw = 2000
+      const ch = 190
   
       const render = Render.create({
         element: scene.current,
@@ -56,13 +56,13 @@ const Matter = () => {
         const ball = Bodies.circle(
           50,
           50,
-          10,
+          30,
           {
-            mass: 10,
-            restitution: .01,
+            mass: 1000,
+            restitution: 1,
             friction: 0,
             render: {
-              fillStyle: '#0000ff'
+              fillStyle: '#fff'
             }
           })
         World.add(engine.current.world, [ball])
@@ -71,9 +71,10 @@ const Matter = () => {
   
     return (
       <div
-        onMouseDown={handleDown}
-        onMouseUp={handleUp}
-        onMouseMove={handleAddCircle}
+        onMouseEnter = {handleDown}
+        onMouseLeave = {handleUp}
+        onMouseMove = {handleAddCircle}
+        style = {{paddingTop: "2rem"}}
       >
         <div ref={scene} style={{ width: '100%', height: '100%' }} />
       </div>

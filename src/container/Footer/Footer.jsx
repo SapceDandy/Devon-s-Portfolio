@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import { ImGithub } from 'react-icons/im';
 import { BsLinkedin } from 'react-icons/bs';
 import { BiBarChartAlt } from "react-icons/bi";
@@ -10,8 +9,6 @@ import Matter from "../Matter/Matter";
 import "./Footer.scss";
 
 const Footer = () => {
-    let [currentFooterHeight, setCurrentFooterHeight] = useState(null);
-    let footerHeight = useRef(null);
 
     return (
         <>
@@ -32,7 +29,7 @@ const Footer = () => {
                     <a href = "mailto:devon.anthony.dudley@gmail.com?"><MdEmail /></a>
                 </div>
                 
-                <div className = "footerBackgroundCover"><Matter /></div>
+                <div className = "footerBackgroundCover">{/*<Matter />*/}</div>
             </div>
             <div className = "socails">
                 <a href = "https://github.com/SapceDandy" target = "_blank" rel = "noreferrer">
