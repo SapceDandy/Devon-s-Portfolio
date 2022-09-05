@@ -32,11 +32,6 @@ const Footer = () => {
                 <div className = "footerBackgroundCover">{/*<Matter />*/}</div>
             </div>
             <div className = "socails">
-                <a href = "https://github.com/SapceDandy" target = "_blank" rel = "noreferrer">
-                    <div>
-                        <ImGithub />
-                    </div>
-                </a>
                 <a href = "https://www.linkedin.com/in/devon-dudley-208975124/" target = "_blank" rel = "noreferrer">
                     <div>
                         <BsLinkedin />
@@ -45,6 +40,11 @@ const Footer = () => {
                 <a href = "https://devonportfolioproject.vercel.app/" target = "_blank" rel = "noreferrer">
                     <div>
                         <BiBarChartAlt />
+                    </div>
+                </a>
+                <a href = "https://github.com/SapceDandy" target = "_blank" rel = "noreferrer">
+                    <div>
+                        <ImGithub />
                     </div>
                 </a>
             </div>

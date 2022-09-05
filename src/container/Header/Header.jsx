@@ -41,7 +41,7 @@ const Header = () => {
                 >
                     <div className = "app__header-badge" style = {{ position: "relative", zIndex: "3" }}>
                         <div className = "badge-cmp app__flex">
-                            <p className = "margin-p make-centered">Hello, my name is</p>
+                            <p className = "margin-p t make-centered">Hello, my name is</p>
                             <div>
                                 <motion.div
                                     whileInView = {{x : [-200, 0], opacity: [0, 1]}} 
@@ -85,7 +85,7 @@ const Header = () => {
                     transition = {{duration: 3, ease:"easeInOut"}}
                     className = "app__header-circles"
                 >
-                    {[images.flutter, images.redux, images.sass].map((circle, index) => (
+                    {[images.motionjs, images.reactjs, images.sass, images.sanity, images.js].map((circle, index) => (
                     <motion.div 
                         drag
                         dragConstraints = {constraintsRef}
@@ -127,7 +127,7 @@ const Header = () => {
                 transition = {{duration: 3, ease:"easeInOut"}}
                 className = "app__header-circles"
             >
-                {[images.flutter, images.redux, images.sass].map((circle, index) => (
+                {[images.motionjs, images.reactjs, images.sass, images.sanity, images.js].map((circle, index) => (
                 <motion.div 
                     drag
                     dragConstraints = {constraintsRef}

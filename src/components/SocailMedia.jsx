@@ -5,12 +5,7 @@ import { BiBarChartAlt } from "react-icons/bi";
 const SocailMedia = () => {
     return (
         <div className = "app__social">
-            <a href = "https://github.com/SapceDandy" target = "_blank" rel = "noreferrer">
-                <div>
-                    <ImGithub />
-                </div>
-            </a>
-            <a href = "https://www.linkedin.com/in/devon-dudley-208975124/" target = "_blank" rel = "noreferrer">
+             <a href = "https://www.linkedin.com/in/devon-dudley-208975124/" target = "_blank" rel = "noreferrer">
                 <div>
                     <BsLinkedin />
                 </div>
@@ -18,6 +13,11 @@ const SocailMedia = () => {
             <a href = "https://devonportfolioproject.vercel.app/" target = "_blank" rel = "noreferrer">
                 <div>
                     <BiBarChartAlt />
+                </div>
+            </a>
+            <a href = "https://github.com/SapceDandy" target = "_blank" rel = "noreferrer">
+                <div>
+                    <ImGithub />
                 </div>
             </a>
         </div>
