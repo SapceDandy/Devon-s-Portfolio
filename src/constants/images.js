@@ -38,9 +38,19 @@ import motionjs from "../assets/motionjs.png";
 import reactjs from "../assets/react.png";
 import vercel from "../assets/vercel.svg";
 import emailjs from "../assets/emailjs.png";
-import tiltjs from "../assets/tiltjs.jpg"
+import tiltjs from "../assets/tiltjs.jpg";
+import faceOne from "../assets/faceOne.png";
+import faceTwo from "../assets/faceTwo.png";
+import faceThree from "../assets/faceThree.png";
+import faceFour from "../assets/faceFour.png";
+import faceFive from "../assets/faceFive.png";
 
 export default {
+  faceFive,
+  faceFour,
+  faceThree,
+  faceTwo,
+  faceOne,
   tiltjs,
   emailjs,
   vercel,

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import {Typewriter } from "react-simple-typewriter"
+import { useTypewriter } from "react-simple-typewriter"
 import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 
@@ -7,6 +7,7 @@ import { images } from "../../constants";
 import { AppWrap } from "../../wrapper";
 
 import "./Header.scss";
+import { MdHelpOutline } from "react-icons/md";
 
 function Tilt(props) {
     const { options, ...rest } = props;
@@ -22,14 +23,31 @@ function Tilt(props) {
 
 
 const Header = () => {
+    const faces = [images.faceOne, images.faceTwo, images.faceThree, images.faceFour, images.faceFive];
     const constraintsRef = useRef(null);
     const [headerWidth, setHeaderWidth] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
     /*const yRef = useRef(.5);
     const xRef = useRef(.5);*/
-
+    
     useEffect(() => {
         setHeaderWidth(constraintsRef.current.clientWidth);
     }, [])
+
+    setTimeout(() => (currentIndex !== (faces.length - 1)) ? setCurrentIndex(currentIndex + 1) : setCurrentIndex(1), 2400)
+
+    /*useEffect(() =>{
+        if (headLocation === (1080 + 30)) {
+            console.log("hello")
+        }
+    })*/
+
+    const { text } = useTypewriter({
+        delaySpeed: 4000,
+        deleteSpeed: 20,
+        typeSpeed: 30,
+        words: ["I am a 2020 graduate from Morehouse College transitioning into the field of software engineering...", "Six months ago, I took the risk of jumping into learning how to code full-time after testing the waters for years...", "Now, I am proud to be able to showoff the triumphs of my journey and the wealth of knowledge I've gained...", "Thank you for taking the time to look at my portfolio and be apart of my story. I look forward to potentially working with you in the future!😊"]
+    });
     
     return (
         <div className = "app__header app__flex" ref = {constraintsRef}>
@@ -67,13 +85,7 @@ const Header = () => {
                                     transition = {{duration: 1, ease:"easeInOut"}}
                                     className = "app__header-info"
                                 >
-                                    <p className = "p-text" style = {{color: "black"}}>
-                                        <Typewriter
-                                            loop = {1}
-                                            typeSpeed = {30}
-                                            words = {["I am a 2020 graduate from Morehouse College transitioning into a software development role"]}
-                                        />
-                                    </p>
+                                    <p className = "p-text" style = {{color: "black"}}>{text}</p>
                                 </motion.div>
                             </div>)}
                         </div>
@@ -114,10 +126,10 @@ const Header = () => {
             <div className = "app__header-img">
                 <motion.div
                     initial = {{ x: 0}}
-                    whileInView = {{ y: [30,-50] }}
+                    animate = {{ y: [30,-50] }}
                     transition = {{ duration: .8, ease:"easeOut", yoyo: Infinity}}
                 >
-                    <img src = {images.profile} alt="Devon" />
+                    <img src = {faces[currentIndex]} alt="Devon" />
                 </motion.div>
             </div>
             
