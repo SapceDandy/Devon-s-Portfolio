@@ -1,5 +1,5 @@
-import { useEffect, useState, useRef } from "react";
-import { About, Footer, Header, Skills, Contact, Work, Matter } from "./container";
+import { useEffect, useState } from "react";
+import { About, Footer, Header, Skills, Contact, Work } from "./container";
 import { Navbar, NavigationDots, BackgroundEffect, SocialMedia } from "./components";
 
 import "./App.scss";
@@ -12,9 +12,12 @@ const App = () => {
   const pageSection = document.getElementsByClassName("app__container");
   //console.log(pageSection)
   //console.log("Page Section: ", pageSection[2].offsetTop)
+  //console.log("pageSection: ", pageSection)
   window.addEventListener("scroll", () => {
       Array.from(pageSection).forEach((section) => {
-          const top = section.offsetTop - 10;
+
+          const top = section.offsetTop - 100;
+          //console.log("Section: ", section.offsetTop)
           //const height = section.height;
           //console.log("window.scrollY: ", window.scrollY)
           

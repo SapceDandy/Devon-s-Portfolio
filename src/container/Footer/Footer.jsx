@@ -4,6 +4,7 @@ import { BiBarChartAlt } from "react-icons/bi";
 import { AiFillPhone } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 import { images } from  "../../constants";
+import JAM from "../../assets/jamstack.png";
 import Matter from "../Matter/Matter";
 
 import "./Footer.scss";
@@ -25,8 +26,9 @@ const Footer = () => {
                     ))}
                 </div>
                 <div className = "footerSections devonInfo">
-                    <a href = "tel:5125421275" style = {{marginBottom: "1rem"}}><AiFillPhone /></a>
+                    <a href = "tel:5125421275"><AiFillPhone /></a>
                     <a href = "mailto:devon.anthony.dudley@gmail.com?"><MdEmail /></a>
+                    <a href = "https://jamstack.org/what-is-jamstack/" target = "_blank" rel = "noreferrer"><img src = {JAM} alt = "JAM" /></a>
                 </div>
                 
                 <div className = "footerBackgroundCover">{/*<Matter />*/}</div>

@@ -36,8 +36,14 @@ import js from "../assets/js.png";
 import sanity from "../assets/sanity.png";
 import motionjs from "../assets/motionjs.png";
 import reactjs from "../assets/react.png";
+import vercel from "../assets/vercel.svg";
+import emailjs from "../assets/emailjs.png";
+import tiltjs from "../assets/tiltjs.jpg"
 
 export default {
+  tiltjs,
+  emailjs,
+  vercel,
   reactjs,
   motionjs,
   sanity,

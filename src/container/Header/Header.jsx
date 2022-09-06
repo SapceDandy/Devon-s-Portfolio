@@ -29,7 +29,7 @@ const Header = () => {
 
     useEffect(() => {
         setHeaderWidth(constraintsRef.current.clientWidth);
-    })
+    }, [])
     
     return (
         <div className = "app__header app__flex" ref = {constraintsRef}>
@@ -85,28 +85,28 @@ const Header = () => {
                     transition = {{duration: 3, ease:"easeInOut"}}
                     className = "app__header-circles"
                 >
-                    {[images.motionjs, images.reactjs, images.sass, images.sanity, images.js].map((circle, index) => (
-                    <motion.div 
-                        drag
-                        dragConstraints = {constraintsRef}
-                        dragTransition={{
-                            min: 0,
-                            max: 100,
-                            bounceDamping: 8
-                        }}
-                        /*whileDrag = {{[value]: 0}}
-                        animate = {{ [value]: 1000 * Math.floor(Math.random() * 2) }}
-                        transition = {{duration: 2, ease: "easeInOut", type: "just", stiffness: 1}}
-                        onUpdate = {endlessMove}*/
-                    >
-                        
-                        <Tilt className = "tilt" options = {{ max: 50, perspective: 300, glare: true, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"}}
+                    {[images.motionjs, images.reactjs, images.vercel, images.sanity, images.emailjs, images.tiltjs].map((circle, index) => (
+                        <motion.div 
+                            drag
+                            dragConstraints = {constraintsRef}
+                            dragTransition={{
+                                min: 0,
+                                max: 100,
+                                bounceDamping: 8
+                            }}
+                            /*whileDrag = {{[value]: 0}}
+                            animate = {{ [value]: 1000 * Math.floor(Math.random() * 2) }}
+                            transition = {{duration: 2, ease: "easeInOut", type: "just", stiffness: 1}}
+                            onUpdate = {endlessMove}*/
                         >
-                            <div className = "circle-cmp app__flex" key = {`circle-${index}`}>
-                                <img src = {circle} alt = "circle" />
-                            </div>
-                        </Tilt>
-                    </ motion.div>
+                            
+                            <Tilt className = "tilt" options = {{ max: 50, perspective: 300, glare: true, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"}}
+                            >
+                                <div className = "circle-cmp app__flex" key = {`circle-${index}`}>
+                                    <img src = {circle} alt = "circle" />
+                                </div>
+                            </Tilt>
+                        </ motion.div>
                     ))}  
                 </motion.div>)}
             </div>
@@ -127,7 +127,7 @@ const Header = () => {
                 transition = {{duration: 3, ease:"easeInOut"}}
                 className = "app__header-circles"
             >
-                {[images.motionjs, images.reactjs, images.sass, images.sanity, images.js].map((circle, index) => (
+                {[images.motionjs, images.reactjs, images.vercel, images.sanity, images.emailjs, images.tiltjs].map((circle, index) => (
                 <motion.div 
                     drag
                     dragConstraints = {constraintsRef}
