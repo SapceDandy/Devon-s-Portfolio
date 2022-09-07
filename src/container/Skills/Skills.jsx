@@ -41,12 +41,12 @@ const Skills = () => {
     }
 
     return (
-        <div ref = {constraintsRef}>
+        <>
             <h2 className = "head-text">
                Skills <span style = {{color: "white"}}>&</span> Experience 
             </h2>
 
-            <div className = "app__skills-container">
+            <div ref = {constraintsRef} className = "app__skills-container">
                 <motion.div className = "app__skills-list">
                     {skills?.map((skill) => (
                         <div className = "app__skills-item app__flex">
@@ -98,7 +98,7 @@ const Skills = () => {
                     ))}
                 </motion.div>
             </div>
-        </div>
+        </>
     )
 }
 
