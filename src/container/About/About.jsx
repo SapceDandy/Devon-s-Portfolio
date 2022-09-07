@@ -42,7 +42,7 @@ const About = () => {
                 Who Is<br /> <span> Devon Dudley</span>
             </h2>
             <div ref = {constraintsRef} className = "about__page">
-                <button type = "button" className = "moveButton" onClick = {() => moveLeft()} disabled = {(move <= ((about.length * -224)) + (3 * 224))}>L</button>
+                <button type = "button" className = "moveButton" onClick = {() => moveLeft()} disabled = {(move <= ((about.length * -224)) + (3 * 224))}>🡸</button>
                 <div className = "app__profiles-wrapper" >
                     <div className = "app__profiles">
                         {about.map((about, index) => (
@@ -65,7 +65,7 @@ const About = () => {
                         ))}
                     </div>
                 </div>
-                <button type = "button" className = "moveButton" onClick = {() => moveRight()} disabled = {(move >= 0)}>R</button>
+                <button type = "button" className = "moveButton" onClick = {() => moveRight()} disabled = {(move >= 0)}>🡺</button>
                 <div className = "phoneButtonWrapper">
                     <button type = "button" className = "moveButtonPhoneLeft" onClick = {() => moveLeft()} disabled = {(move <= ((about.length * -245) + (2 * 245)))}>Left</button>
                     <button type = "button" className = "moveButtonPhoneRight" onClick = {() => moveRight()} disabled = {(move >= 0)}>Right</button>
