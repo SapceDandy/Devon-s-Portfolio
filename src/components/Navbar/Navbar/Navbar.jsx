@@ -71,7 +71,7 @@ const Navbar = () => {
                         {['welcome', 'about', 'programing', 'experience', 'contact'].map((item) => (
                             <motion.div
                                 key = {`${item}`}
-                                animate = {(toggle) ? {y: [0, distance[item]]} : (({y: 0}) && ((navWidth > 450) && ({y: shouldShowActions ? 0 : -85})))}
+                                animate = {(toggle) ? {y: [0, distance[item]]} : (({y: 0}) && ((navWidth > 450) ? ({y: shouldShowActions ? 0 : -85}) : null))}
                                 transition = {{duration: .2 , ease: "easeInOut"}}
                             >
                                     <a href = {`#${item}`}  onClick = {() => setToggle(false)}>{icons[item]}</a> 
