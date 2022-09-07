@@ -28,7 +28,7 @@ const Contact = () => {
 
     return (
         <div className = "app__flex formMargin">
-            <h2 className = "head-text">Looking for A <span style = {{color: "white"}}>Full-Stack Developer?</span></h2>
+            <h2 className = "head-text">Looking for A<br /> <span style = {{color: "white"}}>Full-Stack Developer?</span></h2>
             <form ref = {currentForm} className = "websiteForm" onSubmit={sendEmail}>
                 <div className = "name">
                     <div className = "firstAndLast front">

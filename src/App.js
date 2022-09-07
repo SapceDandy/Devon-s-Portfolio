@@ -5,7 +5,7 @@ import { Navbar, NavigationDots, BackgroundEffect, SocialMedia } from "./compone
 import "./App.scss";
 
 const App = () => {
-  let [active, setActive] = useState("home");
+  let [active, setActive] = useState("welcome");
   /*window.visualViewport.offsetTop*/
   useEffect(() => {
   //console.log("react Dom: ", window.visualViewport)

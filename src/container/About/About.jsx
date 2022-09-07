@@ -41,7 +41,7 @@ const About = () => {
     return (
         <>
             <h2 className = "head-text">
-                Who Is <span> Devon Dudley</span>
+                Who Is<br /> <span> Devon Dudley</span>
             </h2>
             <div ref = {constraintsRef} className = "about__page">
                 <button type = "button" className = "moveButton" onClick = {() => moveLeft()} disabled = {(move <= ((about.length * -224)) + (3 * 224))}>L</button>
