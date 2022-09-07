@@ -99,12 +99,15 @@ const Header = () => {
                             }}
                         >
                             
-                            <Tilt className = "tilt" options = {(headerWidth > 350) && ({ max: 50, perspective: 300, glare: true, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"})}
+                            {(headerWidth > 350) && (<Tilt className = "tilt" options = {{ max: 50, perspective: 300, glare: true, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"}}
                             >
                                 <div className = "circle-cmp app__flex" key = {`circle-${index}`}>
                                     <img src = {circle} alt = "circle" />
                                 </div>
-                            </Tilt>
+                            </Tilt>)}
+                            {(headerWidth <= 350) && (<div className = "circle-cmp app__flex" key = {`circle-${index}`}>
+                                <img src = {circle} alt = "circle" />
+                            </div>)}
                         </ motion.div>
                     ))}  
                 </motion.div>)}

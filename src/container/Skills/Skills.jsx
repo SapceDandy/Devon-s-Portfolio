@@ -50,11 +50,14 @@ const Skills = () => {
                 <motion.div className = "app__skills-list">
                     {skills?.map((skill) => (
                         <div className = "app__skills-item app__flex">
-                            <Tilt className = "tilt" options = {(skillsWidth > 450) && ({ max: 80, perspective: 100, glare: true, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"})}>
+                            {(skillsWidth > 450) && (<Tilt className = "tilt" options = {{ max: 80, perspective: 100, glare: true, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"}}>
                                 <div className = "app__flex">
                                     <img src = {urlFor(skill.icon)} alt = {skill.name}/>                               
                                 </div>
-                            </Tilt>
+                            </Tilt>)}
+                            {(skillsWidth <= 450) && (<div className = "app__flex">
+                                <img src = {urlFor(skill.icon)} alt = {skill.name}/>                               
+                            </div>)}
                             <p className = "p-text">{skill.name}</p>
                         </div>
                     ))}
