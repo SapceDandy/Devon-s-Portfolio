@@ -67,8 +67,8 @@ const About = () => {
                 </div>
                 <button type = "button" className = "moveButton" onClick = {() => moveRight()} disabled = {(move >= 0)}>🡺</button>
                 <div className = "phoneButtonWrapper">
-                    <button type = "button" className = "moveButtonPhoneLeft" onClick = {() => moveLeft()} disabled = {(move <= ((about.length * -245) + (2 * 245)))}>Left</button>
-                    <button type = "button" className = "moveButtonPhoneRight" onClick = {() => moveRight()} disabled = {(move >= 0)}>Right</button>
+                    <button type = "button" className = "moveButtonPhoneLeft" onClick = {() => moveLeft()} disabled = {(move <= ((about.length * -245) + (2 * 245)))}>🡸</button>
+                    <button type = "button" className = "moveButtonPhoneRight" onClick = {() => moveRight()} disabled = {(move >= 0)}>🡺</button>
                 </div>
             </div>
         </>
