@@ -121,8 +121,8 @@ const Header = () => {
             <div className = "app__header-img">
                 <motion.div
                     initial = {{ x: 0}}
-                    animate = {{ y: [30,-50] }}
-                    transition = {{ duration: .8, ease:"easeOut", yoyo: Infinity}}
+                    animate = {(headerWidth > 450) && ({ y: [30,-50] })}
+                    transition = {(headerWidth > 450) && ({ duration: .8, ease:"easeOut", yoyo: Infinity})}
                 >
                     <img src = {faces[currentIndex]} alt="Devon" />
                 </motion.div>
