@@ -60,7 +60,7 @@ const Skills = () => {
                     ))}
                 </motion.div>
 
-                <div className = "app__skills-exp">
+                <motion.div className = "app__skills-exp">
                     {experience?.map((experience) => (
                         <motion.div
                             whileInView = {(skillsWidth > 450) && ({ opacity: [0, 1]})}
@@ -74,7 +74,7 @@ const Skills = () => {
                                 </p>
                             </div>
 
-                            <div
+                            <motion.div
                                 className = "app__skills-exp-works"
                             >
                                 {experience?.works?.map((work) => (
@@ -93,10 +93,10 @@ const Skills = () => {
                                         </motion.div>
                                     </>
                                 ))}
-                            </div>
+                            </motion.div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </div>
     )
