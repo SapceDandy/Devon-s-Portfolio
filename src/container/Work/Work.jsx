@@ -13,8 +13,11 @@ const Work = () => {
     const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
     const [works, setWorks] = useState([]);
     const [filterWork, setFilterWork] = useState([]);
+    const constraintsRef = useRef(null);
+    const [headerWidth, setHeaderWidth] = useState(0);
 
     useEffect(() => {
+        setHeaderWidth(constraintsRef.current.clientWidth);
         const query = '*[_type == "works"]';
 
         client.fetch(query)
@@ -40,7 +43,7 @@ const Work = () => {
     }
 
     return (
-        <>
+        <div ref = {constraintsRef}>
             <h2 className = "head-text">
                 Some of what I learned
                 <span> In 6 Months</span>
@@ -73,7 +76,6 @@ const Work = () => {
                                 transition = {{ duration: .25, ease: 'easeInOut', staggerChildren: .5}}
                                 className = "app__work-hover app__flex"
                             >
-                                {console.log("P Link: ", !work?.projectLink)}
                                 {!(!work?.projectLink) && (<a href={work?.projectLink} target="_blank" rel="noreferrer">
                                     <motion.div
                                         whileInView = {{ scale: [0, 1]}}
@@ -108,7 +110,7 @@ const Work = () => {
                     </div>
                 ))}
             </motion.div>
-        </>
+        </div>
     )
 }
 
