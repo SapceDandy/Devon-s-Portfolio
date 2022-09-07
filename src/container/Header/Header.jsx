@@ -105,10 +105,6 @@ const Header = () => {
                                 max: 100,
                                 bounceDamping: 8
                             }}
-                            /*whileDrag = {{[value]: 0}}
-                            animate = {{ [value]: 1000 * Math.floor(Math.random() * 2) }}
-                            transition = {{duration: 2, ease: "easeInOut", type: "just", stiffness: 1}}
-                            onUpdate = {endlessMove}*/
                         >
                             
                             <Tilt className = "tilt" options = {{ max: 50, perspective: 300, glare: true, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"}}
@@ -147,10 +143,6 @@ const Header = () => {
                         max: 100,
                         bounceDamping: 8
                     }}
-                    /*whileDrag = {{[value]: 0}}
-                    animate = {{ [value]: 1000 * Math.floor(Math.random() * 2) }}
-                    transition = {{duration: 2, ease: "easeInOut", type: "just", stiffness: 1}}
-                    onUpdate = {endlessMove}*/
                 >
                     
                     <Tilt className = "tilt" options = {{ max: 50, perspective: 300, glare: true, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"}} >

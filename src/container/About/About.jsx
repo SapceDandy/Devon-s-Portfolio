@@ -20,8 +20,6 @@ const About = () => {
             })
     }, [])
 
-    console.log("sectionWidth: ", sectionWidth)
-
     const moveRight = () => {
         if (sectionWidth > 900) {
             setMove(move + 224);

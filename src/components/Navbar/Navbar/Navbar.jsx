@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 import { images } from "../../../constants";
-import {HiMenuAlt4, HiX} from "react-icons/hi";
-import { motion, AnimatePresence } from "framer-motion";
+import { BsFillFileEarmarkCodeFill } from "react-icons/bs";
+import { AiFillHome } from "react-icons/ai";
+import { SiAboutdotme } from "react-icons/si";
+import { MdWork, MdContactMail } from "react-icons/md"
+import { HiMenuAlt4 } from "react-icons/hi";
+import { motion } from "framer-motion";
 
 import "./Navbar.scss";
 
@@ -10,6 +14,8 @@ const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     const [shouldShowActions, setShouldShowActions] = useState(true);
     const [lastYPos, setLastYPos] = useState(0);
+    const distance = {"welcome" : 50, "about": 100, "programing": 150, "experience": 200, "contact": 250}
+    const icons = {"welcome" : <AiFillHome />, "about": <SiAboutdotme />, "programing": <BsFillFileEarmarkCodeFill />, "experience": <MdWork />, "contact": <MdContactMail />}
 
     useEffect(() => {
         function handleScroll() {
@@ -30,7 +36,7 @@ const Navbar = () => {
     return (
         <nav style = {{ position: "fixed", zIndex: "1000"}}>
             <motion.div
-                animate = {{y: shouldShowActions ? 0 : -85}}
+                animate = {(!toggle) && ({y: shouldShowActions ? 0 : -85})}
                 transition = {{duration: .5 , ease: "easeInOut"}}
             >
                 <div className = "app__navbar">
@@ -49,28 +55,26 @@ const Navbar = () => {
             </motion.div>
             <motion.div
                 className = "app__navbar-menu"
-                animate = {{y: shouldShowActions ? 0 : -85}}
+                animate = {(!toggle) && ({y: shouldShowActions ? 0 : -85})}
                 transition = {{duration: .5 , ease: "easeInOut"}}
+                style = {{zIndex: 1000}}
             >
-                <HiMenuAlt4 onClick = {() => setToggle(true)}/>
+                <HiMenuAlt4 onClick = {() => setToggle(!toggle)}/>
             </motion.div>
             <div className = "app__navbar-menu-info">
-                {(toggle) && (
-                        <motion.div 
-                            initial = {{x : 400}}
-                            whileInView = {{ x: 0}}
-                            transition = {{ duration: .85, ease: "easeOut"}}
-                        >
-                        <HiX onClick = {() => setToggle(false)}/>
-                        <ul>
-                            {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
-                            <li key = {`${item}`}>
-                                <a href = {`#${item}`} onClick = {() => setToggle(false)}>{item}</a> 
-                            </li>
-                            ))}
-                        </ul>
-                    </motion.div>  
-                )}
+                <div className = "navWrapper" style = {{zIndex: 900}}>
+                    <div className = "mobileWrapper">
+                        {['welcome', 'about', 'programing', 'experience', 'contact'].map((item) => (
+                            <motion.div
+                                key = {`${item}`}
+                                animate = {(toggle) ? {y: [0, distance[item]]} : (({y: 0}) && ({y: shouldShowActions ? 0 : -85}))}
+                                transition = {{duration: .5 , ease: "easeInOut"}}
+                            >
+                                    <a href = {`#${item}`}  onClick = {() => setToggle(false)}>{icons[item]}</a> 
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </nav>
     )
