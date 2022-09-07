@@ -17,7 +17,7 @@ const Work = () => {
     const [workWidth, setWorkWidth] = useState(0);
 
     useEffect(() => {
-        setHeaderWidth(constraintsRef.current.clientWidth);
+        setWorkWidth(constraintsRef.current.clientWidth);
         const query = '*[_type == "works"]';
 
         client.fetch(query)
