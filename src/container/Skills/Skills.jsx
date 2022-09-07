@@ -9,10 +9,13 @@ import { urlFor, client } from "../../client";
 import "./Skills.scss";
 
 const Skills = () => {
+    const constraintsRef = useRef(null);
+    const [skillsWidth, setSkillsWidth] = useState(0);
     const [experience, setExperience] = useState([])
     const [skills, setSkills] = useState([])
 
     useEffect(() => {
+        setSkillsWidth(constraintsRef.current.clientWidth);
         const query = '*[_type == "experiences"]';
         const skillsQuery = '*[_type == "skills"]';
 
@@ -38,7 +41,7 @@ const Skills = () => {
     }
 
     return (
-        <>
+        <div ref = {constraintsRef}>
             <h2 className = "head-text">
                Skills <span style = {{color: "white"}}>&</span> Experience 
             </h2>
@@ -57,10 +60,10 @@ const Skills = () => {
                     ))}
                 </motion.div>
 
-                <motion.div className = "app__skills-exp">
+                <div className = "app__skills-exp">
                     {experience?.map((experience) => (
                         <motion.div
-                            whileInView = {{ opacity: [0, 1]}}
+                            whileInView = {(skillsWidth > 450) && ({ opacity: [0, 1]})}
                             transition = {{ duration: .5 }}
                             className = "app__skills-exp-item"
                             key = {experience.year}
@@ -71,14 +74,14 @@ const Skills = () => {
                                 </p>
                             </div>
 
-                            <motion.div
+                            <div
                                 className = "app__skills-exp-works"
                             >
                                 {experience?.works?.map((work) => (
                                     <>
                                         <motion.div
                                             style = {{marginBottom: "1rem"}}
-                                            whileInView = {{ opacity: [0, 1]}}
+                                            whileInView = {(skillsWidth > 450) && ({ opacity: [0, 1]})}
                                             transition = {{ duration: .5 }}
                                             className = "app__skills-exp-work"
                                             key = {work.name}
@@ -90,12 +93,12 @@ const Skills = () => {
                                         </motion.div>
                                     </>
                                 ))}
-                            </motion.div>
+                            </div>
                         </motion.div>
                     ))}
-                </motion.div>
+                </div>
             </div>
-        </>
+        </div>
     )
 }
 
