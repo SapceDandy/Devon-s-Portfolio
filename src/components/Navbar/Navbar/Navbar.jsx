@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { images } from "../../../constants";
 import { BsFillFileEarmarkCodeFill } from "react-icons/bs";
