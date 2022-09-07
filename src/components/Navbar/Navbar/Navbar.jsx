@@ -68,7 +68,7 @@ const Navbar = () => {
             <div className = "app__navbar-menu-info">
                 <div className = "navWrapper" style = {{zIndex: 900}}>
                     <div className = "mobileWrapper">
-                        {['welcome', 'about', 'programing', 'experience', 'contact'].map((item) => (
+                        {['welcome', 'experience', 'programing','about', 'contact'].map((item) => (
                             <motion.div
                                 key = {`${item}`}
                                 animate = {(toggle) ? {y: [0, distance[item]]} : (({y: 0}) && ((navWidth > 450) ? ({y: shouldShowActions ? 0 : -85}) : null))}
