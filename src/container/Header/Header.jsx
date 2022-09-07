@@ -124,7 +124,7 @@ const Header = () => {
                     animate = {(headerWidth > 450) && ({ y: [30,-50] })}
                     transition = {(headerWidth > 450) && ({ duration: .8, ease:"easeOut", yoyo: Infinity})}
                 >
-                    <img src = {faces[currentIndex]} alt="Devon" />
+                    <img src = {(headerWidth > 450) ? faces[currentIndex] : faces[2]} alt="Devon" />
                 </motion.div>
             </div>
             
