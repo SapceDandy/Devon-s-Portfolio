@@ -17,7 +17,7 @@ const Navbar = () => {
     const [shouldShowActions, setShouldShowActions] = useState(true);
     const [lastYPos, setLastYPos] = useState(0);
     const distance = {"welcome" : 50, "experience": 100, "programing": 150, "about me": 200, "contact": 250}
-    const icons = {"welcome" : <AiFillHome />, "about": <SiAboutdotme />, "programing": <BsFillFileEarmarkCodeFill />, "experience": <MdWork />, "contact": <MdContactMail />}
+    const icons = {"welcome" : <AiFillHome />, "about me": <SiAboutdotme />, "programing": <BsFillFileEarmarkCodeFill />, "experience": <MdWork />, "contact": <MdContactMail />}
 
     useEffect(() => {
         setNavWidth(constraintsRef.current.clientWidth);
