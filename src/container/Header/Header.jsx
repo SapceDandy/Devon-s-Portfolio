@@ -52,8 +52,8 @@ const Header = () => {
         <div className = "app__header app__flex" ref = {constraintsRef}>
             <div className = "headerCol">
                 <motion.div 
-                    animate = {{x : [-200, 0], opacity: [0, 1]}}
-                    transition = {{ duration: .7, ease:"easeOut"}}
+                    animate = {(headerWidth > 450) && ({x : [-200, 0], opacity: [0, 1]})}
+                    transition = {(headerWidth > 450) && ({ duration: .7, ease:"easeOut"})}
                     className = "app__header-info"
                 >
                     <div className = "app__header-badge" style = {{ position: "relative", zIndex: "3" }}>
@@ -61,7 +61,6 @@ const Header = () => {
                             <p className = "margin-p make-centered">Hello, my name is</p>
                             <div>
                                 <motion.div
-                                    initial = {0}
                                     whileInView = {(headerWidth > 450) && ({x : [-200, 0], opacity: [0, 1]})} 
                                     transition = {(headerWidth > 450) && ({ duration: 1.1, ease:"easeOut"})}
                                     className = "app__header-info"

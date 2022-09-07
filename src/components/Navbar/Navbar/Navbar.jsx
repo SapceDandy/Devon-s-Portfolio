@@ -36,7 +36,7 @@ const Navbar = () => {
     return (
         <nav style = {{ position: "fixed", zIndex: "1000"}}>
             <motion.div
-                animate = {(!toggle) && (lastYPos !== 0) && ({y: shouldShowActions ? 0 : -85})}
+                animate = {(!toggle)&& (window.pageYOffset !== 0) && ({y: shouldShowActions ? 0 : -85})}
                 transition = {{duration: .5 , ease: "easeInOut"}}
             >
                 <div className = "app__navbar">
