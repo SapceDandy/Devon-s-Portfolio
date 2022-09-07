@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import { useState, useEffect, useRef} from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import  {  motion } from "framer-motion";
 
@@ -14,7 +14,7 @@ const Work = () => {
     const [works, setWorks] = useState([]);
     const [filterWork, setFilterWork] = useState([]);
     const constraintsRef = useRef(null);
-    const [headerWidth, setHeaderWidth] = useState(0);
+    const [workWidth, setWorkWidth] = useState(0);
 
     useEffect(() => {
         setHeaderWidth(constraintsRef.current.clientWidth);
