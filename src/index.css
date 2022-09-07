@@ -35,6 +35,13 @@ input, input:before, input:after {
   user-select: initial;
 }
 
+textarea, textarea:before, textarea:after {
+  -webkit-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+}
+
 *::-webkit-scrollbar {
   display: none;
 }
