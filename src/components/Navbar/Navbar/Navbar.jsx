@@ -59,7 +59,7 @@ const Navbar = () => {
             </motion.div>
             <motion.div
                 className = "app__navbar-menu"
-                animate = {(!toggle) && ({y: shouldShowActions ? 0 : -85})}
+                animate = {(!toggle) && (navWidth > 450) && ({y: shouldShowActions ? 0 : -85})}
                 transition = {{duration: .5 , ease: "easeInOut"}}
                 style = {{zIndex: 1000}}
             >
@@ -71,7 +71,7 @@ const Navbar = () => {
                         {['welcome', 'about', 'programing', 'experience', 'contact'].map((item) => (
                             <motion.div
                                 key = {`${item}`}
-                                animate = {(toggle) ? {y: [0, distance[item]]} : (({y: 0}) && ({y: shouldShowActions ? 0 : -85}))}
+                                animate = {(navWidth > 450) && ((toggle) ? {y: [0, distance[item]]} : (({y: 0}) && ({y: shouldShowActions ? 0 : -85})))}
                                 transition = {{duration: .2 , ease: "easeInOut"}}
                             >
                                     <a href = {`#${item}`}  onClick = {() => setToggle(false)}>{icons[item]}</a> 
