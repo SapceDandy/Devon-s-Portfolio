@@ -26,20 +26,12 @@ const Header = () => {
     const constraintsRef = useRef(null);
     const [headerWidth, setHeaderWidth] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
-    /*const yRef = useRef(.5);
-    const xRef = useRef(.5);*/
-    
+
     useEffect(() => {
         setHeaderWidth(constraintsRef.current.clientWidth);
     }, [])
 
-    setTimeout(() => (currentIndex !== (faces.length - 1)) ? setCurrentIndex(currentIndex + 1) : setCurrentIndex(0), 1950)
-
-    /*useEffect(() =>{
-        if (headLocation === (1080 + 30)) {
-            console.log("hello")
-        }
-    })*/
+    setTimeout(() => (currentIndex !== (faces.length - 1)) ? setCurrentIndex(currentIndex + 1) : setCurrentIndex(0), 1950);
     
     const { text } = useTypewriter({
         delaySpeed: 4000,
@@ -107,7 +99,7 @@ const Header = () => {
                             }}
                         >
                             
-                            <Tilt className = "tilt" options = {{ max: 50, perspective: 300, glare: true, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"}}
+                            <Tilt className = "tilt" options = {(headerWidth > 350) && ({ max: 50, perspective: 300, glare: true, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"})}
                             >
                                 <div className = "circle-cmp app__flex" key = {`circle-${index}`}>
                                     <img src = {circle} alt = "circle" />
