@@ -12,12 +12,16 @@ import "./Navbar.scss";
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
+    const constraintsRef = useRef(null);
+    const [navWidth, setNavWidth] = useState(0);
     const [shouldShowActions, setShouldShowActions] = useState(true);
     const [lastYPos, setLastYPos] = useState(0);
     const distance = {"welcome" : 50, "about": 100, "programing": 150, "experience": 200, "contact": 250}
     const icons = {"welcome" : <AiFillHome />, "about": <SiAboutdotme />, "programing": <BsFillFileEarmarkCodeFill />, "experience": <MdWork />, "contact": <MdContactMail />}
 
     useEffect(() => {
+        setNavWidth(constraintsRef.current.clientWidth);
+
         function handleScroll() {
         const yPos = window.scrollY;
         const isScrollingUp = yPos < lastYPos;
@@ -34,11 +38,10 @@ const Navbar = () => {
     }, [lastYPos]);
 
     return (
-        <nav style = {{ position: "fixed", zIndex: "1000"}}>
+        <nav ref = {constraintsRef} style = {{ position: "fixed", zIndex: "1000"}}>
             <motion.div
-                initial = {{y: 0}}
-                animate = {(!toggle) && ({y: shouldShowActions ? 0 : -85})}
-                transition = {{duration: .5 , ease: "easeInOut"}}
+                animate = {(!toggle) && (navWidth > 450) && ({y: shouldShowActions ? 0 : -85})}
+                transition = {(!toggle) && (navWidth > 450) && ({duration: .5 , ease: "easeInOut"})}
             >
                 <div className = "app__navbar">
                     <div className = "app__navbar-logo">
