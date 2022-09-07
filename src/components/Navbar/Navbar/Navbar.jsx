@@ -69,7 +69,7 @@ const Navbar = () => {
                             <motion.div
                                 key = {`${item}`}
                                 animate = {(toggle) ? {y: [0, distance[item]]} : (({y: 0}) && ({y: shouldShowActions ? 0 : -85}))}
-                                transition = {{duration: .5 , ease: "easeInOut"}}
+                                transition = {{duration: .2 , ease: "easeInOut"}}
                             >
                                     <a href = {`#${item}`}  onClick = {() => setToggle(false)}>{icons[item]}</a> 
                             </motion.div>
