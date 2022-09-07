@@ -47,8 +47,8 @@ const About = () => {
                     <div className = "app__profiles">
                         {about.map((about, index) => (
                             <motion.div
-                            initial = {{x: 0}}
-                            animate = {{x: move}}
+                                initial = {{x: 0}}
+                                animate = {{x: move}}
                             >
                                 <motion.div
                                     whileInView = {{ opacity: 1}}
