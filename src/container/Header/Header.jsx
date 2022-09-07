@@ -61,8 +61,9 @@ const Header = () => {
                             <p className = "margin-p make-centered">Hello, my name is</p>
                             <div>
                                 <motion.div
-                                    whileInView = {{x : [-200, 0], opacity: [0, 1]}} 
-                                    transition = {{ duration: 1.1, ease:"easeOut"}}
+                                    initial = {0}
+                                    whileInView = {(headerWidth > 450) && ({x : [-200, 0], opacity: [0, 1]})} 
+                                    transition = {(headerWidth > 450) && ({ duration: 1.1, ease:"easeOut"})}
                                     className = "app__header-info"
                                 >
                                     <h1 className = "head-text">
