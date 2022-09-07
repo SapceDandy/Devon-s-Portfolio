@@ -48,7 +48,7 @@ const Navbar = () => {
                         <img src = {images.logo} alt = "logo"/>
                     </div>
                     <ul className = "app__navbar-links">
-                        {['welcome', 'experience', 'programing','about', 'contact'].map((item) => (
+                        {['welcome', 'experience', 'programing','about me', 'contact'].map((item) => (
                             <li key = {`link-${item}`} className = "app__flex p-text">
                                 <div />
                                 <a href = {`#${item}`}>{item}</a> 
@@ -68,7 +68,7 @@ const Navbar = () => {
             <div className = "app__navbar-menu-info">
                 <div className = "navWrapper" style = {{zIndex: 900}}>
                     <div className = "mobileWrapper">
-                        {['welcome', 'experience', 'programing','about', 'contact'].map((item) => (
+                        {['welcome', 'experience', 'programing','about me', 'contact'].map((item) => (
                             <motion.div
                                 key = {`${item}`}
                                 animate = {(toggle) ? {y: [0, distance[item]]} : (({y: 0}) && ((navWidth > 450) ? ({y: shouldShowActions ? 0 : -85}) : null))}

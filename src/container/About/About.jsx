@@ -75,4 +75,4 @@ const About = () => {
     )
 }
 
-export default AppWrap(About, "about", "sectionBackground");
+export default AppWrap(About, "about me", "sectionBackground");

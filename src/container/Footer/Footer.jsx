@@ -18,7 +18,7 @@ const Footer = () => {
                     <img src = {images.logo} alt = "logo"/>
                 </div>
                 <div className = "footerSections footer__links">
-                    {['welcome', 'experience', 'programing', 'about', 'contact'].map((item) => (
+                    {['welcome', 'experience', 'programing', 'about me', 'contact'].map((item) => (
                         <li key = {`link-${item}`} className = "app__flex p-text">
                             <div />
                             <a href = {`#${item}`}>{item}</a> 
