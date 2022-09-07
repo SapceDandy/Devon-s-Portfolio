@@ -36,6 +36,7 @@ const Navbar = () => {
     return (
         <nav style = {{ position: "fixed", zIndex: "1000"}}>
             <motion.div
+                initial = {{y: 0}}
                 animate = {(!toggle)&& (window.pageYOffset !== 0) && ({y: shouldShowActions ? 0 : -85})}
                 transition = {{duration: .5 , ease: "easeInOut"}}
             >
