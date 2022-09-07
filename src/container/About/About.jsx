@@ -43,28 +43,28 @@ const About = () => {
             </h2>
             <div ref = {constraintsRef} className = "about__page">
                 <button type = "button" className = "moveButton" onClick = {() => moveLeft()} disabled = {(move <= ((about.length * -224)) + (3 * 224))}>L</button>
-                    <div className = "app__profiles-wrapper" >
-                        <div className = "app__profiles">
-                            {about.map((about, index) => (
+                <div className = "app__profiles-wrapper" >
+                    <div className = "app__profiles">
+                        {about.map((about, index) => (
+                            <motion.div
+                            initial = {{x: 0}}
+                            animate = {{x: move}}
+                            >
                                 <motion.div
-                                initial = {{x: 0}}
-                                animate = {{x: move}}
+                                    whileInView = {{ opacity: 1}}
+                                    whileHover = {{ scale: 1.1 }}
+                                    transition = {{ duration: .5, type: "tween"}}
+                                    className = "app__profile-item"
+                                    key = {about.title + index}
                                 >
-                                    <motion.div
-                                        whileInView = {{ opacity: 1}}
-                                        whileHover = {{ scale: 1.1 }}
-                                        transition = {{ duration: .5, type: "tween"}}
-                                        className = "app__profile-item"
-                                        key = {about.title + index}
-                                    >
-                                        <img src = {urlFor(about.imgUrl)} alt = {about.title}/>
-                                        <h2 className = "bold-text" style = {{ marginTop: 20}}>{about.title}</h2>
-                                        <h2 className = "p-text" style = {{ marginTop: 10}}>{about.description}</h2>
-                                    </motion.div>
+                                    <img src = {urlFor(about.imgUrl)} alt = {about.title}/>
+                                    <h2 className = "bold-text" style = {{ marginTop: 20}}>{about.title}</h2>
+                                    <h2 className = "p-text" style = {{ marginTop: 10}}>{about.description}</h2>
                                 </motion.div>
-                            ))}
-                        </div>
+                            </motion.div>
+                        ))}
                     </div>
+                </div>
                 <button type = "button" className = "moveButton" onClick = {() => moveRight()} disabled = {(move >= 0)}>R</button>
                 <div className = "phoneButtonWrapper">
                     <button type = "button" className = "moveButtonPhoneLeft" onClick = {() => moveLeft()} disabled = {(move <= ((about.length * -245) + (2 * 245)))}>Left</button>

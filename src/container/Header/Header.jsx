@@ -40,7 +40,7 @@ const Header = () => {
             console.log("hello")
         }
     })*/
-
+    
     const { text } = useTypewriter({
         delaySpeed: 4000,
         deleteSpeed: 20,

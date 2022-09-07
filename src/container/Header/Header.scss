@@ -29,7 +29,6 @@
     align-items: flex-start;
     
     @media screen and (min-width: 2000px) {
-
         width: 100%;
         margin-right: 0rem;
     }
@@ -76,6 +75,10 @@
             text-align: center;
             width: fit-content;
             box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+
+            @media screen and (max-width: 450px){
+                display: none;
+            }
         }
 
     }
