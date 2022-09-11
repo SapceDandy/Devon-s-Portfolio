@@ -123,6 +123,9 @@
             color: var(--white-color)
         }
     }
+    @media screen and (max-width: 450px){
+        opacity: 1;
+    }
 }
 
 .app__work-content {
