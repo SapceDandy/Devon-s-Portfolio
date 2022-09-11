@@ -63,7 +63,7 @@ const Work = () => {
             </div>
 
             <motion.div
-                animate = {animateCard}
+                animate = {(workWidth > 450) && (animateCard)}
                 transition = {{ duration: 0.5, delayChildren: 0.5 }}
                 className = "app__work-portfolio"
             >
@@ -72,14 +72,14 @@ const Work = () => {
                         <div className = "app__work-img app__flex">
                             <img src = {urlFor(work.imgUrl)} alt = {work.name} />
                             <motion.div
-                                whileInView = {(workWidth <= 450) && ({opacity: 1})}
+                                initial = {(workWidth <= 450) && ({opacity: 1})}
                                 whileHover = {(workWidth > 450) && ({opacity: [0, 1]})}
                                 transition = {{ duration: .25, ease: 'easeInOut', staggerChildren: .5}}
                                 className = "app__work-hover app__flex"
                             >
                                 {!(!work?.projectLink) && (<a href={work?.projectLink} target="_blank" rel="noreferrer">
                                     <motion.div
-                                        whileInView = {{ scale: [0, 1]}}
+                                        whileInView = {(workWidth > 450) && ({ scale: [0, 1]})}
                                         whileHover = {(workWidth > 450) && ({ scale: [1, .9]})}
                                         transition = {{duration: .25}}
                                         className = "app__flex"
