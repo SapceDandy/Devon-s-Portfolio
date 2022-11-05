@@ -70,13 +70,13 @@ const Header = () => {
                                 </motion.div>
                             </div>
 
-                            {(headerWidth > 350) && (<div>
+                            {(headerWidth > 350) && (<div style = {{margin: "0rem 2rem"}}>
                                 <motion.div 
                                     whileInView = {{x : [-400, 0], opacity: [0, 1], overflow: "visible" }}
                                     transition = {{duration: 1, ease:"easeInOut"}}
                                     className = "app__header-info"
                                 >
-                                    <p className = "p-text" style = {{color: "black", padding: "0rem 2rem"}}>{text}</p>
+                                    <p className = "p-text" style = {{color: "black"}}>{text}</p>
                                 </motion.div>
                             </div>)}
                         </div>
