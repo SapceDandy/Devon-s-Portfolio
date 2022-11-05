@@ -268,4 +268,7 @@
     @media screen and (max-width: 900px) {
         margin: 3rem;
     }
+    @media screen and (max-width: 450px) {
+        display: none;
+    }
 }
