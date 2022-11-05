@@ -70,7 +70,7 @@ const Header = () => {
                                 </motion.div>
                             </div>
 
-                            {(headerWidth > 350) && (<div style = {{margin: "0rem 2rem"}}>
+                            {(headerWidth > 350) && (<div className = "textWrapper">
                                 <motion.div 
                                     whileInView = {{x : [-400, 0], opacity: [0, 1], overflow: "visible" }}
                                     transition = {{duration: 1, ease:"easeInOut"}}

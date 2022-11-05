@@ -262,3 +262,10 @@
         z-index: 1;
     }
 }
+
+
+.textWrapper {
+    @media screen (max-width: 900px) {
+        margin: 2rem;
+    }
+}
