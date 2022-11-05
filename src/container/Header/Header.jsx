@@ -76,7 +76,7 @@ const Header = () => {
                                     transition = {{duration: 1, ease:"easeInOut"}}
                                     className = "app__header-info"
                                 >
-                                    <p className = "p-text" style = {{color: "black"}}>{text}</p>
+                                    <p className = "p-text" style = {{color: "black", padding: "0rem 2rem"}}>{text}</p>
                                 </motion.div>
                             </div>)}
                         </div>
@@ -98,7 +98,6 @@ const Header = () => {
                                 bounceDamping: 8
                             }}
                         >
-                            
                             {(headerWidth > 350) && (<Tilt className = "tilt" options = {{ max: 50, perspective: 300, glare: true, "max-glare": .7, scale: "140%", easing: "cubic-bezier(.03,.98,.52,.99)"}}
                             >
                                 <div className = "circle-cmp app__flex" key = {`circle-${index}`}>
