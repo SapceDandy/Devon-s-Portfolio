@@ -37,7 +37,7 @@ const Header = () => {
         delaySpeed: 4000,
         deleteSpeed: 20,
         typeSpeed: 30,
-        words: ["I am a 2020 graduate from Morehouse College transitioning into the field of software development. Currently, I am pursuing a Master's in Software Development to elivate my programing skills."/*, "Six months ago, I took the risk of jumping into learning how to code full-time after testing the waters for years...", "Now, I am proud to be able to showoff the triumphs of my journey and the wealth of knowledge I've gained...", "Thank you for taking the time to look at my portfolio and be apart of my story. I look forward to potentially working with you in the future!😊"*/]
+        words: ["I am a 2020 graduate from Morehouse College transitioning into the field of software development. Currently, I am pursuing a Master's in Software Development from Boston University, to elevate my programming skills."/*, "Six months ago, I took the risk of jumping into learning how to code full-time after testing the waters for years...", "Now, I am proud to be able to showoff the triumphs of my journey and the wealth of knowledge I've gained...", "Thank you for taking the time to look at my portfolio and be apart of my story. I look forward to potentially working with you in the future!😊"*/]
     });
     
     return (
