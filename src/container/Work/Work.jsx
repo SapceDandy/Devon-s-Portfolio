@@ -46,7 +46,6 @@ const Work = () => {
         <div ref = {constraintsRef}>
             <h2 className = "head-text">
                 Some of what I learned
-                <span> In 6 Months</span>
             </h2>
 
             <div className = "app__work-filter">
