@@ -45,7 +45,7 @@ const Work = () => {
     return (
         <div ref = {constraintsRef}>
             <h2 className = "head-text">
-                Some of what I learned
+                Some of what I have learned
             </h2>
 
             <div className = "app__work-filter">
